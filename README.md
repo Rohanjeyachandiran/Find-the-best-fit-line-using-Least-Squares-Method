@@ -27,26 +27,29 @@ import numpy as np
 import matplotlib.pyplot as plt
 X=np.array(eval(input()))
 Y=np.array(eval(input()))
-Xmean=np.mean(X)
-Ymean=np.mean(Y)
-num,den=0,0 # num = numerator, den = denomenator
+X_mean=np.mean(X)
+Y_mean=np.mean(Y)
+num=0
+denom=0
 for i in range(len(X)):
-  num+=(X[i]-Xmean)*(Y[i]-Ymean)
-  den+=(X[i]-Xmean)**2
-m=num/den
-c=Ymean-m*Xmean
-print(m,c)
-Y_pred=m*X+c
-print(Y_pred)
+    num+=(X[i]-X_mean)*(Y[i]-Y_mean)
+    denom+=(X[i]-X_mean)**2
+m=num/denom
+b=Y_mean-m*X_mean
+print("Slope:",m)
+print("Y_Intercept:",b)
+y_predicted=m*X+b
+print("Y_Predicted:",y_predicted)
+
 plt.scatter(X,Y)
-plt.plot(X,Y_pred,color="red")
+plt.plot(X,y_predicted,color='red')
 plt.show()
+
 ```
 
+
 ## Output:
-![Screenshot 2024-08-29 212024](https://github.com/user-attachments/assets/c56478df-e569-4a17-a63b-7588f68d3287)
-
-
+![Screenshot 2024-10-04 114807](https://github.com/user-attachments/assets/9ad6705c-24d8-435e-a683-cc3345c1ccbf)
 
 
 ## Result:
